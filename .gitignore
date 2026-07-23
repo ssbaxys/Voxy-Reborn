@@ -1,0 +1,67 @@
+# Build / IDE
+/.gradle/
+/.idea/
+/.vscode/
+/build/
+/run/
+/run-data/
+/out/
+/logs/
+/bin/
+/repo/
+
+.classpath
+.project
+*.launch
+.settings/
+*.iml
+*.ipr
+*.iws
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Compile-only third-party jars (drop in yourself if needed)
+/libs/
+/libs/**
+
+# Upstream / reference clones — keep local, never commit
+/_*/
+/_neo-voxy-src/
+/_voxy-src/
+/_voiddivider-voxy/
+/.reference/
+
+# Orphan / dropped source dumps at repo root
+/*.java
+/*.class
+/*.jar
+!gradle/wrapper/**
+
+# Locale leftovers from community forks if re-added with sources
+**/zh_cn.json
+**/zh_tw.json
+**/lang/zh_*.json
+
+# Upstream maintainer leftovers if re-added with sources
+*NHblock*
+*CREATE-COMPAT-NOTES*
+
+# Fabric leftovers when merging upstream Voxy sources
+**/fabric.mod.json
+**/voxy.accesswidener
+**/ModMenuIntegration.java
+**/IConfigPageSetter.java
+
+# Local workspace notes / agent scratch
+/ARCHITECTURE.md
+/HANDOFF.md
+/VOXY-*.md
+/FRAME-COST-AUDIT.md
+/BIG-ITEMS-PLAN.md
+/PRE-PUSH-AUDIT.md
+/UPSTREAM-MERGE-PLAN.md
+/agent-tools/
+/*.log

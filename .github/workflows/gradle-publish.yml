@@ -1,0 +1,79 @@
+name: Build Voxy Reborn (NeoForge)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+
+      - name: Grant execute permission for Gradle wrapper
+        run: chmod +x ./gradlew
+
+      - name: Build mod with Gradle
+        run: ./gradlew -I init.gradle clean build --no-daemon
+
+      - name: Select release JAR
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf build/release
+          mkdir -p build/release
+
+          if [[ -f build/libs/voxy-reborn.jar ]]; then
+            release_jar="build/libs/voxy-reborn.jar"
+          else
+            mapfile -t release_jars < <(
+              find build/libs -maxdepth 1 -type f \
+                -name 'voxy-reborn*.jar' \
+                ! -name '*-sources.jar' \
+                ! -name '*-dev.jar' \
+                -print | sort
+            )
+
+            if (( ${#release_jars[@]} != 1 )); then
+              echo "Expected one release JAR, found ${#release_jars[@]}:" >&2
+              find build/libs -maxdepth 1 -type f -name '*.jar' -print >&2
+              exit 1
+            fi
+
+            release_jar="${release_jars[0]}"
+          fi
+
+          release_size=$(stat -c '%s' "$release_jar")
+          echo "Selected release: $release_jar ($release_size bytes)"
+
+          if (( release_size > 33554432 )); then
+            echo "Release exceeds the 32 MiB safety limit." >&2
+            exit 1
+          fi
+
+          cp "$release_jar" build/release/voxy-reborn.jar
+          sha256sum build/release/voxy-reborn.jar
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: voxy-reborn
+          path: build/release/voxy-reborn.jar
+          if-no-files-found: error
+          compression-level: 0
