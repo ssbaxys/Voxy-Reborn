@@ -4,7 +4,7 @@
 
 **Author:** Xylos_Official  
 **Version:** 1.0.0-1.21.1  
-**License:** [MIT](LICENSE.md)  
+**License:** [All Rights Reserved](LICENSE.md)  
 **Target:** Minecraft 1.21.1 · NeoForge 21.1.x  
 **Base lineage:** [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy)
 
@@ -53,6 +53,6 @@ You can drop extra / upstream Java into `src/` safely:
 | Original Voxy | [MCRcortex](https://github.com/MCRcortex/voxy) |
 | NeoForge lineage | [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy) |
 | Voxy: Reborn | **Xylos_Official** |
-| License | **MIT** — see [LICENSE](LICENSE) / [LICENSE.md](LICENSE.md) |
+| License | **All Rights Reserved** — see [LICENSE](LICENSE) / [LICENSE.md](LICENSE.md) |
 
-Not affiliated with Mojang, Microsoft, NeoForge, Sodium, Iris, Sable, or the original Voxy author.
+Not affiliated with Mojang, Microsoft, NeoForge, Sodium, Iris, Sable, or the original Voxy author. Upstream Voxy is ARR; this port stays ARR until the original author grants other terms.
