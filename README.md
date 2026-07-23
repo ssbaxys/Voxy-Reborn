@@ -3,7 +3,7 @@
 **Unofficial NeoForge port of [Voxy](https://github.com/MCRcortex/voxy)** by MCRcortex.
 
 **Author:** Xylos_Official  
-**Version:** 1.0.0  
+**Version:** 1.0.0-1.21.1  
 **License:** [MIT](LICENSE.md)  
 **Target:** Minecraft 1.21.1 · NeoForge 21.1.x  
 **Base lineage:** [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy)
@@ -27,9 +27,9 @@ Optional: Iris, Sable, Create, EclipticSeasons.
 .\gradlew clean build
 ```
 
-Distributable jar: `build/libs/voxy-reborn-1.0.0.jar` (via `slimJar`; name includes `mod_version`).
+Distributable jar: `build/libs/voxy-reborn-1.0.0-1.21.1.jar` (via `slimJar`).
 
-Product version is firm **1.0.0** (`gradle.properties` → `mod_version`). Bump that field for releases.
+Product version is `mod_version` + `minecraft_version` → **1.0.0-1.21.1**. Bump `mod_version` in `gradle.properties` for releases.
 
 ## Adding upstream source
 

@@ -25,17 +25,24 @@ public class VoxyCommon {
         if (modFile == null) {
             IS_IN_MINECRAFT = false;
             Logger.error("Running voxy without minecraft");
-            MOD_VERSION = "<UNKNOWN>";
+            MOD_VERSION = "1.0.0-1.21.1";
             IS_DEDICATED_SERVER = false;
         } else {
             IS_IN_MINECRAFT = true;
-            // Get version from LoadingModList (available early)
+            // Prefer the expanded mods.toml version (e.g. 1.0.0-1.21.1).
             var version = modFile.getMods().stream()
                     .filter(m -> m.getModId().equals("voxy"))
                     .findFirst()
                     .map(m -> m.getVersion().toString())
-                    .orElse("<UNKNOWN>");
-            // Firm product version only (no commit suffix).
+                    .orElse("");
+            if (version.isBlank() || version.contains("unknown") || version.contains("UNKNOWN")) {
+                String mc = "1.21.1";
+                try {
+                    mc = FMLLoader.versionInfo().mcVersion();
+                } catch (Throwable ignored) {
+                }
+                version = "1.0.0-" + mc;
+            }
             MOD_VERSION = version;
             IS_DEDICATED_SERVER = FMLLoader.getDist() == Dist.DEDICATED_SERVER;
             Serialization.init();

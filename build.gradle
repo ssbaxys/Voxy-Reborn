@@ -5,7 +5,8 @@ plugins {
 
 def isInGHA = System.getenv("GITHUB_ACTIONS") == "true"
 
-version = project.mod_version
+// In-game / jar version: 1.0.0-1.21.1 (product + Minecraft target)
+version = "${project.mod_version}-${project.minecraft_version}"
 group = project.maven_group
 
 base {
