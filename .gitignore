@@ -63,7 +63,10 @@ Desktop.ini
 /voxy-reborn-icon.png
 /voxy-reborn-banner.png
 /voxy-reborn-banner.jpg
+/voxy-reborn-avatar*.png
+/voxy-reborn-avatar*.jpg
 /TEMPLATE_LICENSE.txt
+/tools/compress_*.py
 
 # Local workspace notes / agent scratch
 /ARCHITECTURE.md
