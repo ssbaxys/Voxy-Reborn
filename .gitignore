@@ -55,6 +55,14 @@ Desktop.ini
 **/ModMenuIntegration.java
 **/IConfigPageSetter.java
 
+# Modrinth / CurseForge listing copy (local only — not source)
+/short.txt
+/long.md
+/changelog.md
+/IMAGES/
+/voxy-reborn-icon.png
+/TEMPLATE_LICENSE.txt
+
 # Local workspace notes / agent scratch
 /ARCHITECTURE.md
 /HANDOFF.md

@@ -1,1 +1,0 @@
-Far-distance LoD terrain for NeoForge 1.21.1 — Sodium-ready, Sable sub-levels visible beyond vanilla render distance. Voxy: Reborn 1.0.0 by Xylos_Official.
