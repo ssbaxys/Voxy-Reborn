@@ -17,7 +17,7 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 public final class VoxyJoinMessage {
     public static final VoxyJoinMessage INSTANCE = new VoxyJoinMessage();
 
-    private static final String REPO = "https://github.com/ssbaxys/Voxy--Neoforged";
+    private static final String REPO = "https://github.com/ssbaxys/Voxy-Reborn";
     private static final String MAINTAINER = "Xylos_Official";
     private static final int DELAY_TICKS = 20;
 

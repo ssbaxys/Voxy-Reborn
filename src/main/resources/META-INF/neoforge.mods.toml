@@ -1,15 +1,15 @@
 modLoader="javafml"
 loaderVersion="[4,)"
-license="All-Rights-Reserved"
-issueTrackerURL="https://github.com/ssbaxys/Voxy--Neoforged/issues"
+license="MIT"
+issueTrackerURL="https://github.com/ssbaxys/Voxy-Reborn/issues"
 
 [[mods]]
 modId="voxy"
 version="${version}"
 displayName="Voxy: Reborn"
-description="NeoForge port of Voxy (far-distance LOD rendering) with Sodium integration and Sable sub-level LOD visibility. Based on the neo-voxy lineage."
+description="Unofficial NeoForge port of Voxy (far-distance LOD rendering) by MCRcortex. Sodium-ready, with Sable sub-level LOD visibility. Author: Xylos_Official."
 authors="Xylos_Official"
-credits="Original Voxy by MCRcortex / Cortex. NeoForge lineage: JohnSnow14284/neo-voxy and community maintainers."
+credits="Unofficial NeoForge port of Voxy by MCRcortex / Cortex. Lineage: JohnSnow14284/neo-voxy and community maintainers. Voxy: Reborn by Xylos_Official."
 logoFile="assets/voxy/icon.png"
 
 [[dependencies.voxy]]

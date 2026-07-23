@@ -1,10 +1,12 @@
 # Voxy: Reborn
 
-Unofficial NeoForge **1.21.1** port of [Voxy](https://github.com/MCRcortex/voxy) by MCRcortex.
+**Unofficial NeoForge port of [Voxy](https://github.com/MCRcortex/voxy)** by MCRcortex.
 
 **Author:** Xylos_Official  
 **Version:** 1.0.0  
-**Base:** [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy)
+**License:** [MIT](LICENSE.md)  
+**Target:** Minecraft 1.21.1 · NeoForge 21.1.x  
+**Base lineage:** [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy)
 
 Far-distance terrain LoD with Sodium integration and Sable sub-level visibility beyond vanilla render distance.
 
@@ -44,5 +46,13 @@ You can drop extra / upstream Java into `src/` safely:
 
 ## Credits & license
 
-Original Voxy © MCRcortex — All rights reserved.  
-This repository is a NeoForge development fork by Xylos_Official; see `LICENSE.md`.
+**Voxy: Reborn** is an unofficial NeoForge **port of Voxy**.
+
+| | |
+|---|---|
+| Original Voxy | [MCRcortex](https://github.com/MCRcortex/voxy) |
+| NeoForge lineage | [JohnSnow14284/neo-voxy](https://github.com/JohnSnow14284/neo-voxy) |
+| Voxy: Reborn | **Xylos_Official** |
+| License | **MIT** — see [LICENSE](LICENSE) / [LICENSE.md](LICENSE.md) |
+
+Not affiliated with Mojang, Microsoft, NeoForge, Sodium, Iris, Sable, or the original Voxy author.

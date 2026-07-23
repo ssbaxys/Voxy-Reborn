@@ -313,7 +313,10 @@ jar {
     // users and CI cannot accidentally publish the ~90 MiB intermediate.
     destinationDirectory.set(layout.buildDirectory.dir("intermediate-jars"))
     from("LICENSE") {
-        rename { "${it}_${project.archives_base_name}"}
+        rename { "${it}_${project.archives_base_name}" }
+    }
+    from("LICENSE.md") {
+        rename { "LICENSE.md_${project.archives_base_name}" }
     }
 }
 
