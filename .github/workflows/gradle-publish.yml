@@ -39,12 +39,15 @@ jobs:
           rm -rf build/release
           mkdir -p build/release
 
-          if [[ -f build/libs/voxy-reborn.jar ]]; then
-            release_jar="build/libs/voxy-reborn.jar"
+          version="$(grep -E '^mod_version=' gradle.properties | cut -d= -f2- | tr -d '[:space:]')"
+          expected="build/libs/voxy-reborn-${version}.jar"
+
+          if [[ -f "$expected" ]]; then
+            release_jar="$expected"
           else
             mapfile -t release_jars < <(
               find build/libs -maxdepth 1 -type f \
-                -name 'voxy-reborn*.jar' \
+                -name 'voxy-reborn-*.jar' \
                 ! -name '*-sources.jar' \
                 ! -name '*-dev.jar' \
                 -print | sort
@@ -67,13 +70,13 @@ jobs:
             exit 1
           fi
 
-          cp "$release_jar" build/release/voxy-reborn.jar
-          sha256sum build/release/voxy-reborn.jar
+          cp "$release_jar" "build/release/voxy-reborn-${version}.jar"
+          sha256sum "build/release/voxy-reborn-${version}.jar"
 
       - name: Upload release artifact
         uses: actions/upload-artifact@v4
         with:
           name: voxy-reborn
-          path: build/release/voxy-reborn.jar
+          path: build/release/voxy-reborn-*.jar
           if-no-files-found: error
           compression-level: 0

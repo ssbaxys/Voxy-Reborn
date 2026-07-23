@@ -27,7 +27,7 @@ Optional: Iris, Sable, Create, EclipticSeasons.
 .\gradlew clean build
 ```
 
-Distributable jar: `build/libs/voxy-reborn.jar` (via `slimJar`).
+Distributable jar: `build/libs/voxy-reborn-1.0.0.jar` (via `slimJar`; name includes `mod_version`).
 
 Product version is firm **1.0.0** (`gradle.properties` → `mod_version`). Bump that field for releases.
 
